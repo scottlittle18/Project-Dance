@@ -55,6 +55,12 @@ public class Timer : MonoBehaviour
 
     }
 
+    public float GetCurrentTime()
+    {
+
+        return CurrentTime;
+
+    }
 
     void FixedUpdate()
     {
