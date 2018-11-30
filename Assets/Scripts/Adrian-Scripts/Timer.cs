@@ -23,18 +23,21 @@ public class Timer : MonoBehaviour
 
 	}
 
+    // Call to start the timer
     public void StartTimer()
     {
 
         IsRunning = true;
     }
 
+    // Call to stop and end the timer
     public void StopTimer()
     {
 
         IsRunning = false;
     }
 
+    // Resets timer 
     public void ResetTimer()
     {
 
@@ -43,6 +46,7 @@ public class Timer : MonoBehaviour
 
     }
 
+    // Resets timer with set endtime
     public void ResetTimer(float NewEndTime)
     {
 
@@ -51,6 +55,7 @@ public class Timer : MonoBehaviour
 
     }
 
+
     void FixedUpdate()
     {
 		
@@ -58,10 +63,12 @@ public class Timer : MonoBehaviour
         {
 
             CurrentTime += Time.fixedDeltaTime;
+
+            // End timer if CurrentTime has reached EndTime
             if (CurrentTime >= EndTime)
             {
 
-                IsRunning = false;
+                StopTimer();
 
             }
 
