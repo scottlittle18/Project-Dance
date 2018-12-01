@@ -27,7 +27,8 @@ public class SongManager : MonoBehaviour {
     Text scoreText;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         instance = this;
         SetScoreText();
 	}
