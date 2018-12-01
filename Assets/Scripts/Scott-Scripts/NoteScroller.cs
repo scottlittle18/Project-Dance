@@ -33,7 +33,7 @@ public class NoteScroller : MonoBehaviour {
         else
         {
             //Controls the direction & speed of the notes
-            transform.position -= new Vector3(0f, beatTempo * Time.deltaTime, 0f); //Current Direction: Straight Down
+            transform.position += new Vector3(0f, beatTempo * Time.deltaTime, 0f); //Current Direction: Straight Up
         }
 	}
 }

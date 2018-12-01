@@ -53,6 +53,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lvlMusic: {fileID: 0}
   startPlaying: 0
+  scorePerNote: 50
+  penaltyPerMiss: 25
   noteScroller: {fileID: 0}
   scoreCounter: 0
   moneyCounter: 0
+  multiplierTracker: 0
+  currentMultiplier: 0
+  multiplierThresholds: 040000000800000010000000
+  scoreText: {fileID: 0}
+  multipierText: {fileID: 0}
