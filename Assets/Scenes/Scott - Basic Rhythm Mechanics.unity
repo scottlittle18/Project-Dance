@@ -296,8 +296,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 334, y: 0}
-  m_SizeDelta: {x: 160, y: 16}
+  m_AnchoredPosition: {x: 280.7, y: 0}
+  m_SizeDelta: {x: 85.3, y: 16}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &409873027
 MonoBehaviour:
@@ -416,8 +416,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 334, y: 0}
-  m_SizeDelta: {x: 160, y: 16}
+  m_AnchoredPosition: {x: 269.92, y: -16}
+  m_SizeDelta: {x: 96.08, y: 16}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &727172410
 MonoBehaviour:
@@ -451,7 +451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: XXXX'
+  m_Text: XXx Multiplier
 --- !u!222 &727172411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -598,6 +598,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114169481104754992, guid: d4c2acc173025184c95d99756162eecc,
+        type: 2}
+      propertyPath: multiplierThresholds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4340968410484010, guid: d4c2acc173025184c95d99756162eecc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -654,6 +659,26 @@ Prefab:
         type: 2}
       propertyPath: penaltyPerMiss
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169481104754992, guid: d4c2acc173025184c95d99756162eecc,
+        type: 2}
+      propertyPath: multipierText
+      value: 
+      objectReference: {fileID: 727172410}
+    - target: {fileID: 114169481104754992, guid: d4c2acc173025184c95d99756162eecc,
+        type: 2}
+      propertyPath: multiplierThresholds.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169481104754992, guid: d4c2acc173025184c95d99756162eecc,
+        type: 2}
+      propertyPath: multiplierThresholds.Array.data[1]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114169481104754992, guid: d4c2acc173025184c95d99756162eecc,
+        type: 2}
+      propertyPath: multiplierThresholds.Array.data[2]
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4c2acc173025184c95d99756162eecc, type: 2}
