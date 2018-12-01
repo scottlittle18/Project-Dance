@@ -25,23 +25,10 @@ public class NoteObject : MonoBehaviour {
     {
         if (Input.GetKeyDown(arrowToPress) && canBePressed)
         {
-            //Destroys This GameObject When Player Hits Successfully
-            Destroy(gameObject);
-        }
+            SongManager.instance.NoteHit();
 
-        if((Input.inputString != Input.GetKeyDown(arrowToPress).ToString()) && canBePressed)
-        {
-            //TODO: Condition - User Hit Wrong Button
-        }
-
-        if (Input.GetKeyDown(arrowToPress) && !canBePressed)
-        {
-            //TODO: Condition - User Hit Button While An Arrow Was Not Inside A Trigger Zone
-        }
-
-        if ((Input.inputString != Input.GetKeyDown(arrowToPress).ToString()) && !canBePressed)
-        {
-            //TODO: Condition - User Hit Wrong Button While An Arrow Was Not Inside A Trigger Zone
+            //Deactivates This GameObject When Player Hits Successfully
+            gameObject.SetActive(false);
         }
     }
 
@@ -64,6 +51,8 @@ public class NoteObject : MonoBehaviour {
         {
             //Prevents the note from being pressed when out of the target zone
             canBePressed = false;
+
+            SongManager.instance.NoteMissed();
         }
     }
 }
