@@ -21,15 +21,18 @@ public class SongManager : MonoBehaviour {
     public static SongManager instance;
 
     [HideInInspector]
-    public int scoreCounter, moneyCounter;
+    public int scoreCounter, moneyCounter, multiplierTracker;
+    public int currentMultiplier;
+    public int[] multiplierThresholds;
 
     [SerializeField]
-    Text scoreText;
+    Text scoreText, multipierText;
 
     // Use this for initialization
     void Start () {
         instance = this;
-        SetScoreText();
+        currentMultiplier = 1;
+        SetHUDText();
 	}
 	
 	// Update is called once per frame
@@ -52,8 +55,20 @@ public class SongManager : MonoBehaviour {
         //TODO: Debug.Log("Hit On Time");
         Debug.Log("Hit On Time");
 
-        scoreCounter += scorePerNote;
-        SetScoreText();
+        //Builds up Multiplier with each successful hit
+        if(currentMultiplier - 1 < multiplierThresholds.Length)
+        {
+            multiplierTracker++;
+
+            if (multiplierThresholds[currentMultiplier - 1] <= multiplierTracker)
+            {
+                multiplierTracker = 0;
+                currentMultiplier++;
+            }
+        }
+
+        scoreCounter += scorePerNote * currentMultiplier;
+        SetHUDText();
     }
 
     public void NoteMissed()
@@ -61,12 +76,20 @@ public class SongManager : MonoBehaviour {
         //TODO: Debug.Log("Missed Note");
         Debug.Log("Missed Note");
 
+        //Reset Multiplier
+        currentMultiplier = 1;
+        multiplierTracker = 0;
+
+        //Subtract from player score
         scoreCounter -= penaltyPerMiss;
-        SetScoreText();
+
+        //Refresh Score and Multiplier HUD
+        SetHUDText();
     }
 
-    void SetScoreText()
+    void SetHUDText()
     {
         scoreText.text = "Score: " + scoreCounter.ToString();
+        multipierText.text = currentMultiplier + "x Multiplier!";
     }
 }
