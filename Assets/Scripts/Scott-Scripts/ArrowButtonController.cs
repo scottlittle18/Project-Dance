@@ -8,9 +8,6 @@ public class ArrowButtonController : MonoBehaviour {
     Sprite unpressedSprite, pressedSprite;
 
     SpriteRenderer arrowButtonRender;
-    
-    //TODO: Used For prototyping pressable buttons due to not having the necessary assets
-    Color defaultColor;
 
     //Declares Input Variable
     public KeyCode arrowToPress; // <-- **Must be public because it is used by the NoteObject script**
@@ -20,9 +17,6 @@ public class ArrowButtonController : MonoBehaviour {
     {
         //Get Sprite Renderer Component
         arrowButtonRender = GetComponent<SpriteRenderer>();
-
-        //TODO: Set Defaul Color for Prototype Buttons
-        defaultColor = arrowButtonRender.color;
     }
 
     // Update is called once per frame
@@ -36,16 +30,12 @@ public class ArrowButtonController : MonoBehaviour {
     {
         if (Input.GetKeyDown(arrowToPress))
         {
-            //TODO: Commented out for prototyping // strumButtonRender.sprite = pressedSprite;
-
-            arrowButtonRender.material.color = Color.gray;
+            arrowButtonRender.sprite = pressedSprite;
         }
 
         if (Input.GetKeyUp(arrowToPress))
         {
-            //TODO: Commented out for prototyping // strumButtonRender.sprite = unpressedSprite;
-
-            arrowButtonRender.material.color = defaultColor;
+            arrowButtonRender.sprite = unpressedSprite;
         }
     }
 }

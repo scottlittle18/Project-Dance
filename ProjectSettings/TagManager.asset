@@ -39,8 +39,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3814743191
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 3302415607
+    locked: 0
+  - name: HUD
+    uniqueID: 4111875381
     locked: 0
   - name: Arrows
     uniqueID: 2973169349
