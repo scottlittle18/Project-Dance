@@ -8,7 +8,8 @@ public class NoteScroller : MonoBehaviour {
     float beatTempo;
 
     //To check if game has started
-    bool hasStarted;
+    [HideInInspector]
+    public bool hasStarted;
 
 	// Use this for initialization
 	void Start () {
@@ -22,12 +23,12 @@ public class NoteScroller : MonoBehaviour {
 
         if (!hasStarted)
         {  
-            //Press Any Key To Get The Notes To Start Scrolling If The Game Hasn't Started
+            /*Press Any Key To Get The Notes To Start Scrolling If The Game Hasn't Started
             if (Input.anyKeyDown)
             {
                 //Starts Scrolling
                 hasStarted = true;
-            }
+            }   */
         }
         else
         {

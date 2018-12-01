@@ -18,13 +18,32 @@ public class NoteObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        InputHandler();
+    }
 
+    void InputHandler()
+    {
         if (Input.GetKeyDown(arrowToPress) && canBePressed)
         {
             //Destroys This GameObject When Player Hits Successfully
             Destroy(gameObject);
         }
-	}
+
+        if((Input.inputString != Input.GetKeyDown(arrowToPress).ToString()) && canBePressed)
+        {
+            //TODO: Condition - User Hit Wrong Button
+        }
+
+        if (Input.GetKeyDown(arrowToPress) && !canBePressed)
+        {
+            //TODO: Condition - User Hit Button While An Arrow Was Not Inside A Trigger Zone
+        }
+
+        if ((Input.inputString != Input.GetKeyDown(arrowToPress).ToString()) && !canBePressed)
+        {
+            //TODO: Condition - User Hit Wrong Button While An Arrow Was Not Inside A Trigger Zone
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
